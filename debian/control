@@ -1,0 +1,36 @@
+Source: opencloud-desktop
+Section: net
+Priority: optional
+Maintainer: Fabian Parzefall <fabian@pzfl.de>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-qmldeps,
+ cmake (>= 3.18),
+ extra-cmake-modules (>= 6.0.0),
+ libdbus-1-dev,
+ libkdsingleapplication-qt6-dev (>= 1.0.0),
+ libre-graph-api-cpp-qt-client (>= 1.0.4),
+ libsqlite3-dev (>= 3.9.0),
+ qt6-base-dev (>= 6.8),
+ qt6-declarative-private-dev (>= 6.8),
+ qt6-l10n-tools,
+ qt6-tools-dev,
+ qtkeychain-qt6-dev (>= 0.13),
+ zlib1g-dev,
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://opencloud.eu
+Vcs-Git: https://github.com/opencloud-eu/desktop.git
+Vcs-Browser: https://github.com/opencloud-eu/desktop
+
+Package: opencloud-desktop
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${qml6:Depends},
+ ${shlibs:Depends},
+Description: desktop synchronization client for OpenCloud
+ OpenCloud Desktop is a tool to synchronize files from an OpenCloud
+ server with your computer. It provides a graphical client with a
+ system tray icon as well as a command line tool (opencloudcmd) for
+ scripting and headless setups.

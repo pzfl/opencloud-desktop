@@ -1,0 +1,17 @@
+Description: Give the OpenCloudGui shared library a version and SONAME
+ OpenCloudResources and libsync set VERSION/SOVERSION, but OpenCloudGui
+ did not, so it was installed as an unversioned libOpenCloudGui.so.
+Author: Fabian Parzefall <fabian@pzfl.de>
+Forwarded: not-needed
+Last-Update: 2026-11-15
+---
+--- a/src/gui/CMakeLists.txt
++++ b/src/gui/CMakeLists.txt
+@@ -92,6 +92,7 @@
+ add_subdirectory(folderwizard)
+ 
+ set_target_properties(OpenCloudGui PROPERTIES AUTOUIC ON AUTORCC ON)
++set_target_properties(OpenCloudGui PROPERTIES VERSION ${MIRALL_VERSION} SOVERSION ${MIRALL_SOVERSION})
+ # for the generated qml module
+ target_include_directories(OpenCloudGui PRIVATE models spaces creds)
+ target_link_libraries(OpenCloudGui

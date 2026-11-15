@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DBUILD_TESTING=OFF \
+		-DWITH_CRASHREPORTER=OFF \
+		-DWITH_AUTO_UPDATER=OFF \
+		-DWITH_UPDATE_NOTIFICATION=OFF \
+		-DVIRTUAL_FILE_SYSTEM_PLUGINS=off

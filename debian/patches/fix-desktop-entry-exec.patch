@@ -1,0 +1,28 @@
+Description: Pass file arguments to the client from the desktop entry
+ The opencloud.desktop entry declares MimeType=application/vnd.opencloud,
+ so the Exec key must contain a field code (%U) to receive the file or
+ URL arguments, as required by the desktop entry specification.
+Author: Fabian Parzefall <fabian@pzfl.de>
+Forwarded: not-needed
+Last-Update: 2026-11-15
+---
+--- a/opencloud.desktop.in
++++ b/opencloud.desktop.in
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Utility;X-SuSE-SyncUtility;
+ Type=Application
+-Exec=@APPLICATION_EXECUTABLE@ --showsettings
++Exec=@APPLICATION_EXECUTABLE@ --showsettings %U
+ Name=@APPLICATION_NAME@ desktop sync client
+ Comment=@APPLICATION_NAME@ desktop synchronization client
+ GenericName=Folder Sync
+@@ -160,7 +160,7 @@
+ 
+ 
+ [Desktop Action Settings]
+-Exec=@APPLICATION_EXECUTABLE@ --showsettings
++Exec=@APPLICATION_EXECUTABLE@ --showsettings %U
+ Name=Show @APPLICATION_NAME@ settings
+ Icon=@APPLICATION_ICON_NAME@
+ 

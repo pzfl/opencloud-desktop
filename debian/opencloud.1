@@ -1,0 +1,59 @@
+.TH OPENCLOUD 1 "2026-11-15" "OpenCloud Desktop 4.0.0" "User Commands"
+.SH NAME
+opencloud \- OpenCloud desktop file synchronization client
+.SH SYNOPSIS
+.B opencloud
+.RI [ options ]
+.SH DESCRIPTION
+.B opencloud
+is the graphical client of OpenCloud. It synchronizes files between an
+OpenCloud server and your computer and shows a system tray icon with the
+sync status.
+.PP
+By default the client launches in the background. If another instance is
+already running, new invocations are forwarded to it (single instance).
+.SH OPTIONS
+.TP
+.BR \-s ", " \-\-show
+Start with the main window visible, or bring a running instance to the front.
+.TP
+.BR \-q ", " \-\-quit
+Quit the running instance.
+.TP
+.BI \-\-logfile " filename"
+Write the log to the given file (use
+.B \-
+to write to stdout).
+.TP
+.BI \-\-logdir " name"
+Write each sync log output in a new file in the given folder.
+.TP
+.B \-\-logflush
+Flush the log file after every write.
+.TP
+.B \-\-logdebug
+Output debug-level messages in the log.
+.TP
+.B \-\-debug
+Enable debug mode.
+.TP
+.B \-\-cmd
+Forward all arguments to the command line client (opencloudcmd). This
+argument must be the first.
+.TP
+.B \-\-help
+Display help and exit.
+.TP
+.B \-\-version
+Display version information and exit.
+.SH FILES
+.TP
+.I ~/.config/OpenCloud/opencloud.cfg
+Client configuration file.
+.TP
+.I ~/.local/share/OpenCloud/
+Default local sync folder location.
+.SH SEE ALSO
+.BR opencloudcmd (1)
+.SH AUTHOR
+OpenCloud contributors.

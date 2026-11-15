@@ -1,0 +1,19 @@
+Description: Generate opencloudcmd.desktop from opencloudcmd.desktop.in
+ The command line client desktop entry was generated from
+ opencloud.desktop.in, producing a duplicate of the GUI entry (wrong
+ Exec line, MimeType without field code). Use the dedicated
+ opencloudcmd.desktop.in template instead.
+Author: Fabian Parzefall <fabian@pzfl.de>
+Forwarded: not-needed
+Last-Update: 2026-11-15
+---
+--- a/src/cmd/CMakeLists.txt
++++ b/src/cmd/CMakeLists.txt
+@@ -16,6 +16,6 @@
+ endif()
+ 
+ if(UNIX AND NOT APPLE)
+-    configure_file(${CMAKE_SOURCE_DIR}/opencloud.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_EXECUTABLE}cmd.desktop)
++    configure_file(${CMAKE_SOURCE_DIR}/opencloudcmd.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_EXECUTABLE}cmd.desktop)
+     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_EXECUTABLE}cmd.desktop DESTINATION ${KDE_INSTALL_DATADIR}/applications)
+ endif()

@@ -1,0 +1,66 @@
+.TH OPENCLOUDCMD 1 "2026-11-15" "OpenCloud Desktop 4.0.0" "User Commands"
+.SH NAME
+opencloudcmd \- OpenCloud command line synchronization client
+.SH SYNOPSIS
+.B opencloudcmd
+.RI [ options ]
+.I server_url
+.RI [ space_id ]
+.RI [ source_dir ]
+.SH DESCRIPTION
+.B opencloudcmd
+performs the synchronization of an OpenCloud space to a local directory
+without a graphical interface, suitable for scripts and headless setups.
+.SH POSITIONAL ARGUMENTS
+.TP
+.I server_url
+The URL of the OpenCloud installation, usually the root path.
+.TP
+.I space_id
+The id, name or short id of the space to synchronize. If omitted or not
+matching any space, a list of spaces is printed.
+.TP
+.I source_dir
+The local directory to synchronize into.
+.SH OPTIONS
+.TP
+.BI \-\-exclude " file"
+Path to an exclude list file.
+.TP
+.BI \-\-unsynced-folders " file"
+File containing the list of unsynced remote folders (selective sync).
+.TP
+.B \-\-non-interactive
+Do not block execution with interaction.
+.TP
+.BI \-\-max-sync-retries " n"
+Retry the sync at most
+.I n
+times (defaults to 3).
+.TP
+.BI \-\-upload-limit " n"
+Limit the upload speed to
+.I n
+KB/s.
+.TP
+.BI \-\-download-limit " n"
+Limit the download speed to
+.I n
+KB/s.
+.TP
+.B \-\-sync-hidden-files
+Enable synchronization of hidden files.
+.TP
+.BI \-\-verbose " verbosity"
+Set the log verbosity: 0 = no logging (default), 1 = general logging,
+2 = additionally HTTP logs, 3 = additionally debug information.
+.TP
+.B \-\-help
+Display help and exit.
+.TP
+.B \-\-version
+Display version information and exit.
+.SH SEE ALSO
+.BR opencloud (1)
+.SH AUTHOR
+OpenCloud contributors.
